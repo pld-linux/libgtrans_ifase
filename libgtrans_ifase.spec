@@ -5,7 +5,7 @@ Release:	1
 License:	GPL
 Group:		Libraries
 Group(pl):	Biblioteki
-Source0:	http://download.sourceforge.net/gtranscript/%{name}-%{version}.tar.gz
+Source0:	ftp://download.sourceforge.net/pub/sourceforge/gtranscript/%{name}-%{version}.tar.gz
 BuildRequires:	glib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
