@@ -1,62 +1,80 @@
-# Note that this is NOT a relocatable package
-%define ver      0.2.0
-%define  RELEASE 1
-%define  rel     %{?CUSTOM_RELEASE} %{!?CUSTOM_RELEASE:%RELEASE}
-%define prefix      /usr
-%define sysconfdir  /etc
+Summary:	Database Access Library
+Name:		libgtrans_ifase
+Version:	0.2.0
+Release:	1
+License:	GPL
+Group:		Libraries
+Group(pl):	Biblioteki
+Source0:	http://download.sourceforge.net/gtranscript/%{name}-%{version}.tar.gz
+BuildRequires:	glib-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-Summary:        Database Access Library
-Name: 		libgtrans_ifase
-Version: 	%ver
-Release: 	%rel
-Copyright: 	Free Software Foundation
-Group: 		Applications/Databases
-Source:         libgtrans_ifase-%{ver}.tar.gz
-BuildRoot: 	/var/tmp/libgtrans_ifase-%{ver}-root
-DocDir:		%{prefix}/doc
-
+%define		_prefix		/usr
+%define		_sysconfdir	/etc
 
 %description
+libgtrans_ifase is the library that provides GNOME Transcript with database
+access via plugin system.
 
-libgtrans_ifase is the library that provides GNOME Transcript with
-database access via plugin system.
+%package devel
+Summary:	Header files for libgtrans_ifase
+Summary(pl):	Pliki nag³ówkowe do libgtrans_ifase
+Group:		Development/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Requires:	%{name} = %{version}
+
+%description devel
+Header files for libgtrans_ifase.
+
+%description -l pl devel
+Pliki nag³ówkowe do libgtrans_ifase.
+
+%package static
+Summary:	Static libgtrans_ifase library
+Summary(pl):	Biblioteka statyczna libgtrans_ifase
+Group:		Development/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Requires:	%{name}-devel = %{version}
+
+%description static
+Static libgtrans_ifase library.
+
+%description -l pl static
+Biblioteka statyczna libgtrans_ifase.
 
 %prep
 %setup -q
 
 %build
-# Needed for snapshot releases.
-%ifarch alpha
-  MYARCH_FLAGS="--host=alpha-redhat-linux"
-%endif
-
-if [ ! -f configure ]; then
-  CFLAGS="$RPM_OPT_FLAGS" ./autogen.sh $MYARCH_FLAGS --prefix=%prefix --localstatedir=/var/lib --sysconfdir=%sysconfdir
-else
-  CFLAGS="$RPM_OPT_FLAGS" ./configure $MYARCH_FLAGS --prefix=%prefix --localstatedir=/var/lib --sysconfdir=%sysconfdir
-fi
-
-if [ "$SMP" != "" ]; then
-  (make "MAKE=make -k -j $SMP"; exit 0)
-  make
-else
-  make
-fi
+LDFLAGS="-s"; export LDFLAGS
+%configure
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make prefix=$RPM_BUILD_ROOT%{prefix} sysconfdir=$RPM_BUILD_ROOT%{sysconfdir} install
+make install DESTDIR=$RPM_BUILD_ROOT
+
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
+
+gzip -9nf AUTHORS ChangeLog NEWS README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-
+%post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %files
-%defattr(-, root, root)
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
-%doc AUTHORS COPYING ChangeLog NEWS README INSTALL
-%{prefix}/*
+%files devel
+%defattr(644,root,root,755)
+%doc *.gz
+%{_includedir}/gtrans_ifase
+%attr(755,root,root) %{_libdir}/lib*.la
+
+%files static
+%attr(644,root,root) %{_libdir}/lib*.a
