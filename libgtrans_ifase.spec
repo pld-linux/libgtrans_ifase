@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gtranscript/%{name}-%{version}.tar.gz
+# Source0-md5:	3cd934113478c43d79a8af06be777d44
 URL:		http://gtranscript.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
