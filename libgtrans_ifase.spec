@@ -53,7 +53,7 @@ Biblioteka statyczna libgtrans_ifase.
 
 %build
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure
 %{__make}
