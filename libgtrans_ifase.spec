@@ -33,7 +33,7 @@ Requires:	%{name} = %{version}
 %description devel
 Header files for libgtrans_ifase.
 
-%description -l pl devel
+%description devel -l pl
 Pliki nag³ówkowe do libgtrans_ifase.
 
 %package static
@@ -45,7 +45,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 Static libgtrans_ifase library.
 
-%description -l pl static
+%description static -l pl
 Biblioteka statyczna libgtrans_ifase.
 
 %prep
