@@ -5,16 +5,13 @@ Version:	0.2.0
 Release:	2
 License:	GPL
 Group:		Libraries
-Source0:	ftp://download.sourceforge.net/pub/sourceforge/gtranscript/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gtranscript/%{name}-%{version}.tar.gz
 URL:		http://gtranscript.sourceforge.net/
-BuildRequires:	glib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	glib-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr
-%define		_sysconfdir	/etc
 
 %description
 libgtrans_ifase is the library that provides GNOME Transcript with
