@@ -1,7 +1,8 @@
 Summary:	Database Access Library
+Summary(pl):	Biblioteka dostêpu do Baz Danych
 Name:		libgtrans_ifase
 Version:	0.2.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 Group(pl):	Biblioteki
@@ -48,6 +49,9 @@ Biblioteka statyczna libgtrans_ifase.
 %setup -q
 
 %build
+libtoolize --copy --force
+aclocal
+autoconf
 %configure
 %{__make}
 
