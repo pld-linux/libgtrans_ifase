@@ -63,8 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf AUTHORS ChangeLog NEWS README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -77,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog NEWS README
 %{_includedir}/gtrans_ifase
 %{_libdir}/lib*.la
 
