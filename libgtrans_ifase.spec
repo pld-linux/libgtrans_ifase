@@ -5,13 +5,6 @@ Version:	0.2.0
 Release:	2
 License:	GPL
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/gtranscript/%{name}-%{version}.tar.gz
 URL:		http://gtranscript.sourceforge.net/
 BuildRequires:	glib-devel
@@ -35,13 +28,6 @@ dostЙpem do baz danych poprzez system wtyczek.
 Summary:	Header files for libgtrans_ifase
 Summary(pl):	Pliki nagЁСwkowe do libgtrans_ifase
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -54,13 +40,6 @@ Pliki nagЁСwkowe do libgtrans_ifase.
 Summary:	Static libgtrans_ifase library
 Summary(pl):	Biblioteka statyczna libgtrans_ifase
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
