@@ -26,7 +26,7 @@ dostêpem do baz danych poprzez system wtyczek.
 Summary:	Header files for libgtrans_ifase
 Summary(pl):	Pliki nag³ówkowe do libgtrans_ifase
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libgtrans_ifase.
@@ -38,7 +38,7 @@ Pliki nag³ówkowe do libgtrans_ifase.
 Summary:	Static libgtrans_ifase library
 Summary(pl):	Biblioteka statyczna libgtrans_ifase
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libgtrans_ifase library.
@@ -59,7 +59,8 @@ Biblioteka statyczna libgtrans_ifase.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
