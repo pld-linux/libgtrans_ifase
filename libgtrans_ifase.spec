@@ -1,5 +1,5 @@
 Summary:	Database Access Library
-Summary(pl):	Biblioteka dostêpu do Baz Danych
+Summary(pl.UTF-8):   Biblioteka dostÄ™pu do Baz Danych
 Name:		libgtrans_ifase
 Version:	0.2.0
 Release:	2
@@ -18,32 +18,32 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 libgtrans_ifase is the library that provides GNOME Transcript with
 database access via plugin system.
 
-%description -l pl
-libgtrans_ifase jest bibliotek± dostarczaj±c± GNOME Transcript z
-dostêpem do baz danych poprzez system wtyczek.
+%description -l pl.UTF-8
+libgtrans_ifase jest bibliotekÄ… dostarczajÄ…cÄ… GNOME Transcript z
+dostÄ™pem do baz danych poprzez system wtyczek.
 
 %package devel
 Summary:	Header files for libgtrans_ifase
-Summary(pl):	Pliki nag³ówkowe do libgtrans_ifase
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe do libgtrans_ifase
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libgtrans_ifase.
 
-%description devel -l pl
-Pliki nag³ówkowe do libgtrans_ifase.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe do libgtrans_ifase.
 
 %package static
 Summary:	Static libgtrans_ifase library
-Summary(pl):	Biblioteka statyczna libgtrans_ifase
+Summary(pl.UTF-8):   Biblioteka statyczna libgtrans_ifase
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libgtrans_ifase library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna libgtrans_ifase.
 
 %prep
