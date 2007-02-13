@@ -1,5 +1,5 @@
 Summary:	Database Access Library
-Summary(pl.UTF-8):   Biblioteka dostępu do Baz Danych
+Summary(pl.UTF-8):	Biblioteka dostępu do Baz Danych
 Name:		libgtrans_ifase
 Version:	0.2.0
 Release:	2
@@ -24,7 +24,7 @@ dostępem do baz danych poprzez system wtyczek.
 
 %package devel
 Summary:	Header files for libgtrans_ifase
-Summary(pl.UTF-8):   Pliki nagłówkowe do libgtrans_ifase
+Summary(pl.UTF-8):	Pliki nagłówkowe do libgtrans_ifase
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -36,7 +36,7 @@ Pliki nagłówkowe do libgtrans_ifase.
 
 %package static
 Summary:	Static libgtrans_ifase library
-Summary(pl.UTF-8):   Biblioteka statyczna libgtrans_ifase
+Summary(pl.UTF-8):	Biblioteka statyczna libgtrans_ifase
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
